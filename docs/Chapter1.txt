@@ -1,0 +1,30 @@
+#Introduction to Symfony 7
+--------------------------------------------------------------------------------------
+
+- PHP Framework
+- Reusable set of PHP components
+- MVC artitecture
+- Fullstack framework to develop web application as well as microservices application
+
+- Coading Standards
+-- PSR-1: https://www.php-fig.org/psr/psr-1/
+-- PSR-2: https://www.php-fig.org/psr/psr-2/
+-- PSR-4: https://www.php-fig.org/psr/psr-4/
+-- PSR-12: https://www.php-fig.org/psr/psr-12/
+
+-- Basic rule that we will follow
+--- While using operator, Give space before and after operator. e.g A + B = C
+--- Class Name, should be Camel Case. e.g Product, ProductItem etc. Also file name should be same as class name wiht PHP extension
+--- Variable Name, Use camel case with first charecter should be small. e.g product, productItem, totalPrice
+--- Function Name, User camel case with frist charecter should be small. e.g print, debugLog, addProduct, addProductItem
+
+- Requirement
+-- PHP 8.2 +
+-- Install php extensions: Ctype, iconv, PCRE, Session, SimpleXML, and Tokenizer
+-- Composer: https://getcomposer.org/download/
+-- Symfony CLI: https://symfony.com/download
+
+- Basic commands used in symfony
+-- CD: We use cd command to navigate with directories
+-- composer: we use composer commands to install php sdk/bundle/library, to run symfony commands
+-- git: fetch, pull, push, commit 
