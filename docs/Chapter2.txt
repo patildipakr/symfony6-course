@@ -1,0 +1,66 @@
+#Installing & Setting up the Symfony Frameworks
+--------------------------------------------------------------------------------------
+
+- Official totorial: https://symfony.com/doc/7.0/setup.html
+
+- Basics
+-- Create project
+-- Install dependency
+-- Setup virtual host
+-- Access the project by URL
+
+
+
+- Use composer to create and setup basic web based project
+
+- Create new project
+-- composer create-project symfony/skeleton:"7.1.*" symfony7-course
+-- cd symfony7-course
+-- composer require webapp
+
+- Setup existing created project
+-- git clone <URL>
+-- Go to project directory
+-- composer install (Run this command to install all dependancies mention in composer.json file)
+
+- Just copy blank project files into your project
+-- Go to project directory
+-- composer install (Run this command to install all dependancies mention in composer.json file)
+
+
+- How to find which symfony version installed or confirm
+-- Go to the current directory
+   cd symfony7-course
+-- php bin/console about
+
+- Configure web server/Virtual host
+-- Create configuration file in your apache
+   nano /etc/apache2/sites-available/symfony7-course.conf
+-- Copy following content into conf file
+	<VirtualHost *:80>
+		ServerName www.symfony7-course.local
+			
+		DocumentRoot /home/patildipakr/workspace_traning/symfony7-course/public
+		
+		<Directory "/home/patildipakr/workspace_traning/symfony7-course/public">
+			AllowOverride All
+			Options -Indexes +FollowSymLinks
+			Require all granted
+	    	Allow from all
+		</Directory>
+			
+		ErrorLog ${APACHE_LOG_DIR}/symfony7_course_error.log
+		CustomLog ${APACHE_LOG_DIR}/symfony7_course_access.log combined	
+	</VirtualHost>
+ 
+-- Open hosts file
+   nano /etc/hosts
+-- Add following entry in host file
+   127.0.1.1       www.ls-dash.local
+-- Run following command
+   sudo a2ensite symfony7-course.conf
+-- Restart Pache
+   systemctl reload apache2
+-- Open URL
+   http://www.symfony7-course.local/index.php
+   
