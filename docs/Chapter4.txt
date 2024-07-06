@@ -1,0 +1,44 @@
+#Routing
+--------------------------------------------------------------------------------------
+
+- Route can create with YAML, XML, PHP or using attributes
+
+- Creating Routes as Attributes
+  Create first controller with route
+  
+- Debugging Routes
+  php bin/console debug:router
+  
+- Match route
+  php bin/console router:match <path>
+  
+- Route Parameters
+  {slug}, {id}, {type}
+  
+- Priority Parameter
+  priority: <number>
+
+- Parameter Conversion
+  Pass int and get Entity object in controller function
+  Create new entity
+  Update DB schema: php bin/console doctrine:schema:update --force
+  
+- Getting the Route Name and Parameters
+  $routeName = $request->attributes->get('_route');
+  $routeParameters = $request->attributes->get('_route_params');
+  $allAttributes = $request->attributes->all();  
+
+- Generate URL 
+  $this->generateUrl('route_name');
+  
+- Generate in service
+  UrlGeneratorInterface
+  
+- Generate in Twig
+  path('route_name', {slug: 'slug-value'})
+  
+- Official URL
+  https://symfony.com/doc/current/routing.html
+      
+    
+  
