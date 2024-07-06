@@ -1,0 +1,11 @@
+#Directory Stucture
+--------------------------------------------------------------------------------------
+
+- bin
+- config
+- src
+- public
+- var 
+- venter
+- composer.json
+- composer.lock
