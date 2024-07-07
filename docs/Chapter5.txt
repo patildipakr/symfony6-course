@@ -1,0 +1,38 @@
+#controller
+--------------------------------------------------------------------------------------
+
+- What is Controller
+  PHP function that reads information from the Request object and creates and returns a Response object
+
+- Response can be HTML page, JSON, XML, a file download, a redirect, a 404 error or anything else
+
+- Structure of controller
+
+- Generating URLs
+  generateUrl function used for that
+  
+- Redirecting
+  redirectToRoute, redirect (This is when want to redirect to any full url)
+  
+- Rendering Templates
+  render, renderView
+  
+ - Use Services
+ 
+ - Command to list all autowiring services
+   php bin/console debug:autowiring
+  
+- Errors and Exceptions
+  $this->createNotFoundException
+  new AccessDeniedException()
+  new \Exception($message);
+  
+- Session flash
+  addFlash
+   
+- Request and Response Objects
+  Read parameters, Read header parameters, Return response, json response  
+  
+- Access Parameters
+
+- JSON response  

@@ -59,7 +59,7 @@
    127.0.1.1       www.ls-dash.local
 -- Run following command
    sudo a2ensite symfony7-course.conf
--- Restart Pache
+-- Restart Apache
    systemctl reload apache2
 -- Open URL
    http://www.symfony7-course.local/index.php

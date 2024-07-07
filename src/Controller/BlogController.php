@@ -9,6 +9,7 @@ use App\Repository\BlogRepository;
 use App\Entity\Blog;
 use Symfony\Component\HttpFoundation\Request;
 use App\Service\RouteUrlGenerate;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 class BlogController extends AbstractController
 {
@@ -22,6 +23,42 @@ class BlogController extends AbstractController
         return $this->render('blog/index.html.twig', [
             "message" => "This is the detail page, My slug is : " . $blog->getName()
         ]);
+    }
+    
+    
+    #[Route('/blog-detail/{id}', name: 'app_blog_details_v1')]
+    public function getBlogDetails(
+        int $id, 
+        Request $request, 
+        RouteUrlGenerate $routeUrlGenerate,
+        BlogRepository $blogRepository
+    ): Response
+    {
+        //Do the code to get blog detail form db based on matching slug
+        $blog = $blogRepository->find($id);
+        if(!$blog instanceof Blog) {
+            //throw $this->createNotFoundException('Blog Not Found');
+            
+            //throw new AccessDeniedException();
+            
+            throw new \Exception('Blog Not Found');
+        }
+        
+        $xml = '<body>This is sample xml</body>';
+        $response = new Response($xml);
+        $response->headers->set('Content-Type', 'xml');
+        
+        return $response;
+        
+        return $this->json([
+            'id' => $blog->getId(),
+            'name' => $blog->getName(),
+            'slug' => $blog->getSlug()
+        ]);
+        
+        /*return $this->render('blog/index.html.twig', [
+            "message" => "This is the detail page, My slug is : " . $blog->getName()
+        ]);*/
     }
     
     #[Route('/blog/about-us', name: 'app_blog_about_us', priority: 2)]
