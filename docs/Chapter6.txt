@@ -1,0 +1,75 @@
+#Twig Templates
+--------------------------------------------------------------------------------------
+
+- What is Twig template
+
+- Twig Templating Language
+  {{ ... }}, {% ... %}, {# ... #}, {{ title|upper }} (Use to execute some logic)
+  
+- Default Twig tags
+  Tags are normally used in {% ... %}
+  https://twig.symfony.com/doc/3.x/tags/index.html
+  
+- Default Twig filters
+  Filter use after "|" pipe sign
+  https://twig.symfony.com/doc/3.x/filters/index.html
+  
+- Default Twig Functions
+  call as a normal function in php like function_name(prameters if any)
+  https://twig.symfony.com/doc/3.x/functions/index.html
+  
+- Configuration
+  https://symfony.com/doc/current/reference/configuration/twig.html#auto-reload
+
+- Template naming convension 
+  
+- Variables
+  How object or array variable render
+  array, object public property, object public method, object public getter method, object isser method, object hasser method
+  if not match then send runtime error
+  
+- Linking to Pages
+  path()
+  
+- Assets
+  composer require symfony/asset
+  asset() 
+  css, js, image
+  
+- App Variables
+  app.user, app.request, app.session, app.flashes, app.locale
+    
+- Globals Variables
+  config/packages/twig.yaml  
+  
+- Twig Components
+  composer require symfony/ux-twig-component
+  php bin/console make:twig-component
+  Create your first component
+  blocks in components ({% block content %}{%endblock)
+  
+- Rendering Templates
+  Rendering in Controller
+  Rendering in Service (Use service Environment $twig)
+    
+- Dump Twig Utilities
+
+- Including Templates
+  {{ include('path') }}
+  
+- Embedding Controllers
+  {{ render(controller(
+      'App\\Controller\\BlogController::recentArticles', {max: 3}
+  )) }}
+
+- Template Inheritance and Layouts
+  {% extends 'base.html.twig' %}
+  
+- Twig Extension
+  filter, function
+  
+   
+  
+    
+  
+  

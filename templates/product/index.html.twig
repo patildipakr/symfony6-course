@@ -11,6 +11,29 @@
 <div class="example-wrapper">
     <h1>Chapter : Countroller</h1>
     
-    {{ dump(html) }}
+    {% set message = "\nThis is any custom message .\nThis is second line" %}
+    
+    {% for i in 0..10 %}
+        * {{ i }}
+    {% endfor %}
+
+    {% if debug is defined and debug == true %}
+        {{ dump(html) }}
+	{% endif %}
+	
+	{{ dump(app.locale) }}
+	
+	{{ message|upper|nl2br }}
+	
+	
+	<twig:Flash type="success"></twig:Flash>
+	
+	{#% for successMessage in app.flashes['success'] %}
+		<p>{{ dump(successMessage) }} <br/>
+	{% endfor %#}
+	
+	<br/>
+	
+	<a href="{{ path('app_product_detail') }}" class="txt-lg-black">Product Detailt</a>
 </div>
 {% endblock %}

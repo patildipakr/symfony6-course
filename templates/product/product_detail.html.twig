@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+This is product page
+{{ dump(current_date_fn()) }}
+
+
+<br/>
+<a href="{{ path('app_product') }}" class="txt-lg-black">Back to Product List</a>
+
+<script type="text/javascript">
+	log('This is sample function trigger');
+</script>
+{% endblock %}
