@@ -1,5 +1,8 @@
 twig:
     file_name_pattern: '*.twig'
+    globals: 
+        short_date_format: 'd M Y'
+        company_name: "WEBAPPC"
 
 when@test:
     twig:

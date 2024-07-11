@@ -78,4 +78,13 @@ class BlogController extends AbstractController
         return $this->render('blog/index.html.twig', [
         ]);
     }
+    
+    
+    
+    #[Route('/render', name: 'app_blog_render')]
+    public function recentArticles(): Response
+    {
+        return $this->render('blog/index.html.twig', [
+        ]);
+    }
 }
