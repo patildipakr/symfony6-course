@@ -1,5 +1,5 @@
 <div{{ attributes }}>
-    {% for successMessage in app.flashes[type] %}
-		<div class="text-{{ type }}">{{ successMessage }}</div>
+	{% for message in app.flashes(type) %}
+		<div class="text-{{ type }}">{{ message }}</div>
 	{% endfor %}
 </div>

@@ -1,0 +1,57 @@
+#Databases and the Doctrine
+--------------------------------------------------------------------------------------
+
+- Installing 
+  composer require symfony/orm-pack
+  composer require --dev symfony/maker-bundle
+
+- Database Conenction
+  DATABASE_URL="mysql://root:"123"@127.0.0.1:3306/examples"
+  
+- Creating an Entity
+  Sample Project
+  Category: id, name
+  Ticket: id, code, category, subjct, status, createdAt, updatedAt
+  Comment: id, type, ticket, note, createdAt
+    
+- Update Database
+  php bin/console make:migration
+  php bin/console doctrine:migrations:migrate
+  
+  php bin/console doctrine:schema:update --force
+    
+- Add records in DB
+  $em->persist($object);
+  
+- Edit Record
+  
+- Remove 
+  $em->remove($object);
+  
+- Fetch Data From DB
+  find methods
+
+- With Query Builder
+  
+- Count
+
+- Join
+  InnerJoin
+  Left Join
+
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+- https://symfony.com/doc/7.1/doctrine.html
