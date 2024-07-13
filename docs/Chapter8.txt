@@ -39,19 +39,5 @@
   InnerJoin
   Left Join
 
-    
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-- https://symfony.com/doc/7.1/doctrine.html
+- Reference
+  https://symfony.com/doc/7.1/doctrine.html
