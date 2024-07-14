@@ -1,5 +1,5 @@
 <div{{ attributes }}>
 	{% for message in app.flashes(type) %}
-		<div class="text-{{ type }}">{{ message }}</div>
+		<div class="alert alert-{{ type }}">{{ message }}</div>
 	{% endfor %}
 </div>

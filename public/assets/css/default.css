@@ -1,0 +1,12 @@
+.txt-white {
+	color: #FFFFFF;
+}
+
+.txt-lg-black {
+	font-size: 30px;
+	color: #000000;
+}
+
+.text-success {
+	background: green;
+}
