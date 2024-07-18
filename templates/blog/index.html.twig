@@ -13,6 +13,28 @@
     
     {{ message|default('') }}
     
-    <a href="{{ path('app_blog_about_us') }}">About Us</a>
+    <a href="{{ path('app_blog_about_us') }}">About Us</a> |
+    <a href="{{ path('app_blog_add') }}">Add Blog</a>
+    
+    {% if blogs is defined and blogs is not empty %}
+    	<div class="mt-5">
+    		<table class="">
+    			<thead>
+    				<th>ID</th>
+    				<th>slug</th>
+    				<th>Name</th>
+    			</thead>
+    			<tbody>
+        			{% for blog in blogs %}
+        				<tr>
+        					<td>{{ blog.id }}</td>
+        					<td>{{ blog.slug }}</td>
+        					<td>{{ blog.name }}</td>
+        				</tr>
+        			{% endfor %}
+    			</tbody>
+    		</table>
+    	</div>
+    {% endif %}
 </div>
 {% endblock %}

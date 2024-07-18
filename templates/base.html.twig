@@ -16,8 +16,9 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
-        
+    	<div class="container">
+            {% block body %}{% endblock %}
+        </div>
         <script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
         {% block body_js %}
         

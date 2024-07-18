@@ -15,6 +15,23 @@ class BlogRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Blog::class);
     }
+    
+    /**
+     * This function add/update category in DB
+     * @param Blog $blog
+     * @param bool $flush
+     * @return Blog
+     */
+    public function save(Blog $blog, bool $flush = false): Blog {
+        $em = $this->getEntityManager();
+        $em->persist($blog);
+        
+        if($flush == true) {
+            $em->flush();
+        }
+        
+        return $blog;
+    }
 
     //    /**
     //     * @return Blog[] Returns an array of Blog objects

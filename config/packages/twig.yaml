@@ -1,5 +1,6 @@
 twig:
     file_name_pattern: '*.twig'
+    form_themes: ['bootstrap_5_layout.html.twig']
     globals: 
         short_date_format: 'd M Y'
         company_name: "WEBAPPC"

@@ -1,0 +1,6 @@
+entity:
+    blog:
+       slug:
+           not_blank: "Slug should not blank"
+       name:
+           not_blank: "Blog name should not blank"
