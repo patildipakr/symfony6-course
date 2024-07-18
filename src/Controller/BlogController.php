@@ -10,9 +10,46 @@ use App\Entity\Blog;
 use Symfony\Component\HttpFoundation\Request;
 use App\Service\RouteUrlGenerate;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
+use App\Form\BlogType;
 
 class BlogController extends AbstractController
 {
+    #[Route('/blog', name: 'app_blog')]
+    public function index(
+        BlogRepository $blogRepository
+    ): Response
+    {
+        return $this->render('blog/index.html.twig', [
+            'blogs' => $blogRepository->findAll()
+        ]);
+    }
+    
+    #[Route('/blog/add', name: 'app_blog_add', priority: 2)]
+    public function add(
+        Request $request,
+        BlogRepository $blogRepository
+    ): Response
+    {
+        $blog = new Blog();
+        
+        $form = $this->createForm(BlogType::class, $blog);
+        
+        $form->handleRequest($request);
+        if($form->isSubmitted() && $form->isValid()) {
+            //Do something to save the blog
+            
+            $blog = $blogRepository->save($blog, true);
+            
+            $this->addFlash('success', 'Article "' . $blog->getName() . '" Added successfully');
+            
+            return $this->redirectToRoute('app_blog');
+        }
+        
+        return $this->render('blog/add.html.twig', [
+            "form" => $form
+        ]);
+    }
+    
     
     #[Route('/blog/{id}', name: 'app_blog_details')]
     public function blogDetails(Blog $blog, Request $request, RouteUrlGenerate $routeUrlGenerate): Response
@@ -70,17 +107,7 @@ class BlogController extends AbstractController
             "message" => "This is about us page"
         ]);
     }
-    
-    #[Route('/blog', name: 'app_blog')]
-    public function index(): Response
-    {
         
-        return $this->render('blog/index.html.twig', [
-        ]);
-    }
-    
-    
-    
     #[Route('/render', name: 'app_blog_render')]
     public function recentArticles(): Response
     {

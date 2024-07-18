@@ -1,0 +1,46 @@
+#Forms in Symfony
+--------------------------------------------------------------------------------------
+
+- Packages Required
+  composer require symfony/form
+  
+- Uses
+  Build The Form, Render The Form, Process The Form
+
+- Packags 
+  composer require symfony/form
+  composer require symfony/validator
+  composer require symfony/translation
+
+- Form Types
+  php bin/console debug:form  see all types
+  php bin/console debug:form <type> See type detail attributes
+  https://symfony.com/doc/current/reference/forms/types.html
+  
+- Building Forms
+  php bin/console make:form
+  
+  $form = $this->createForm(<FormType>::class, <entity_object>);
+
+  $form->handleRequest($request);
+  
+  if $form->isSubmitted() && $form->isValid() then save the object
+  
+  Pass $form to twig page
+  
+  form_themes: ['bootstrap_5_layout.html.twig'] render form theme
+  
+  {{ form(form) }}
+  
+- Validation
+  https://symfony.com/doc/current/validation.html#constraints
+  
+  use Symfony\Component\Validator\Constraints as Assert
+  #[Assert\NotBlank]
+    
+  translations/validators/validators.en.yaml
+  
+- Crud Operation
+
+
+  

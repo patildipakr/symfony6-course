@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Add Blog!{% endblock %}
+
+{% block body %}
+	<a href="{{ path('app_blog') }}">Back To Blog List</a>
+	
+	<div class="mt-5">
+        {{ form(form) }}
+	</div>
+{% endblock %}
