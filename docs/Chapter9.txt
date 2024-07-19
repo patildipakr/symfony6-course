@@ -39,8 +39,5 @@
   #[Assert\NotBlank]
     
   translations/validators/validators.en.yaml
-  
-- Crud Operation
-
 
   
