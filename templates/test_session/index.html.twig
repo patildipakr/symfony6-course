@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello TestSessionController!{% endblock %}
+
+{% block body %}
+<div class="example-wrapper">
+    <h1>Session demo</h1>
+
+    <div class="mt-5">
+    	<twig:Flash type="success"/>
+    	<p>
+    		Random Number : {{ randomNumber|default('') }}
+    	</p>
+    	<a href="{{ path('app_test_session2') }}">Add session value</a>
+    </div>
+</div>
+{% endblock %}

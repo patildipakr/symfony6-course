@@ -1,0 +1,22 @@
+#Sessions
+--------------------------------------------------------------------------------------
+
+- Replace old php global $_SESSION into
+  Send data from multiple request
+  Sessions are only started if you read or write from it.
+
+- Package Require
+  composer require symfony/http-foundation
+  
+- Configuration
+  config/packages/framework.yaml
+  
+- Get session in Controller and Service
+  Request in controller 
+  RequestStack in service
+  
+- Session Attributes
+  set
+  get
+    
+- Flash Messages 
