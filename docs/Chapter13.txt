@@ -1,0 +1,16 @@
+#Messaging / Queues
+--------------------------------------------------------------------------------------
+
+- Provide a message bus, send message and handle that by handler
+
+- Package Required
+  composer require symfony/messenger
+  
+- Create first Message and Message Handler  
+  php bin/console make:message
+  
+- Structure of Message and MessageHandler
+  
+- Trigger
+  MessageBusInterface $bus->dispatch($messageObject)
+  
