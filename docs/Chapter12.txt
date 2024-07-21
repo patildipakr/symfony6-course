@@ -1,0 +1,53 @@
+#Console Commands
+--------------------------------------------------------------------------------------
+
+- Run logic from command line
+
+- Exising commands
+  php bin/console list
+  
+  e.g php bin/console cache:clear
+  
+- Creating a Command
+  php bin/console make:command
+  
+  Registering the Command (Using PHP attribute [AsCommand])
+  
+  __construct
+  
+  configure
+  
+  execute
+  
+  Running the Command
+  
+- Console Output
+  OutputInterface $output
+  $output->writeln
+  
+- Console Input
+  InputInterface $input
+  $input->getArgument
+  $input->getOption
+  
+- SymfonyStyle
+  $io = new SymfonyStyle($input, $output);
+  $io->writeln
+  io->title
+  $io->note
+  $io->error
+  $io->success
+  $io->warning
+  
+  Code Snipet to ask question and validate input
+  	$variable = $io->ask('Your Question: ', 'Default Value', function(string $variable) {
+	    if(empty($variable)) {
+	        throw new \RuntimeException('Error Message');
+	    }
+	    
+	    return $variable;
+	});
+  
+- Inject Service
+
+    
